@@ -1,5 +1,7 @@
 import graphl from "graphql"
-import _ from "lodash"
+// import Book from "./models/book"
+import Author from "./models/author.js"
+import Book from "./models/book.js"
 const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLList } = graphl
 
 const books = [
@@ -43,7 +45,6 @@ const Authortype = new GraphQLObjectType({
             type: GraphQLList(BookType),
             resolve(parent, args) {
                 let res = books.filter(book => { return book.id === parent.id })
-                console.log(res)
                 return res
             }
         }
@@ -68,7 +69,20 @@ const RootQuery = new GraphQLObjectType({
                 const val = authors.filter((book) => { return book.id === args.id })
                 return val[0]
             }
-        }
+        },
+        books: {
+            type: new GraphQLList(BookType),
+            resolve(parent, args) {
+                return books
+            }
+        },
+        authors: {
+            type: new GraphQLList(Authortype),
+            resolve(parent, args) {
+                return authors
+            }
+        },
+
     }
 })
 
