@@ -1,0 +1,21 @@
+@import "./font";
+
+.loading {
+  position: relative;
+  font-family: Zen;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+.bookList {
+  position: relative;
+  padding: 1rem 4rem;
+  & .bul {
+    text-decoration: none;
+    & .bli {
+      text-transform: capitalize;
+      font-size: 2.4rem;
+      //   list-style-type: none;
+      font-family: Graduate;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: Graduate;
+  src: url("../fonts/Graduate-Regular.ttf");
+}
+
+@font-face {
+  font-family: Fenix;
+  src: url("../fonts/Fenix-Regular.ttf");
+}
+
+@font-face {
+  font-family: Zen;
+  src: url("../fonts/ZenDots-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.newFont {
+  font-family: Fenix;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=App.css.map */

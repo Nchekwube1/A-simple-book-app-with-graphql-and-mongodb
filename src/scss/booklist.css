@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Graduate;
+  src: url("../fonts/Graduate-Regular.ttf");
+}
+
+@font-face {
+  font-family: Fenix;
+  src: url("../fonts/Fenix-Regular.ttf");
+}
+
+@font-face {
+  font-family: Zen;
+  src: url("../fonts/ZenDots-Regular.ttf");
+}
+
+.loading {
+  position: relative;
+  font-family: Zen;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.bookList {
+  position: relative;
+  padding: 1rem 4rem;
+}
+
+.bookList .bul {
+  text-decoration: none;
+}
+
+.bookList .bul .bli {
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  font-family: Graduate;
+}
+/*# sourceMappingURL=booklist.css.map */
