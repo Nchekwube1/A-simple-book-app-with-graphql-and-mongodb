@@ -1,7 +1,7 @@
 import {graphql} from "react-apollo"
 import {flowRight as compose} from "lodash"
 import { useState } from "react"
-import {getAuthors,addBook} from "./Queries/queries"
+import {getAuthors,addBook, getBooks} from "./Queries/queries"
 import "./scss/Addbook.css"
 type eachAuthor ={
   name:string,
@@ -14,20 +14,19 @@ type authorRes = eachAuthor[]
 
 
 const Addbook = (props:any)=>{
-    console.log(props)
 const [name,setName] =useState("")
 const [genre,setGenre]= useState("")
 const [authorId, setAuthorid] = useState("")
   const formSubmit = (e:any)=>{
       e.preventDefault()
-      console.log(name,genre,authorId)
       props.addBook({
           variables:{
             name,
             genre,
             authorId
 
-          }
+          },
+          refetchQueries:()=>[{query:getBooks}]
       })
       setName("")
       setAuthorid("")
@@ -49,12 +48,7 @@ return(
       <input type="text" className="field"  placeholder="genre" value={genre} onChange={e=> setGenre(e.target.value)} />
 
       <select className="select" onChange={
-          (e)=>{
-              setAuthorid(e.target.value)
-              console.log(authorId)
-            
-            }
-        //  
+          (e)=>{ setAuthorid(e.target.value)}
          }>
           <option className="select">Select Author</option>
           {authorsArr.map((author:eachAuthor)=>{
