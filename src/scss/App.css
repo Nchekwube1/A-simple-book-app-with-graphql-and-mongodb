@@ -24,8 +24,28 @@ html {
   font-size: 62.5%;
 }
 
-.newFont {
-  font-family: Fenix;
-  font-size: 3rem;
+.body {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.body .left {
+  position: relative;
+  width: 60%;
+  height: 89.6vh;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,6 +1,5 @@
-// import {useState,useEffect} from 'react'
-import{gql} from "apollo-boost"
 import {graphql} from "react-apollo"
+import { getBooks } from "./Queries/queries"
 import "./scss/booklist.css"
 type eachBook ={
   name:string,
@@ -10,14 +9,7 @@ type eachBook ={
 type bookRes = eachBook[]
 
 
-const getBooks = gql`
-{
-    books{
-        name
-        id
-    }
-}
-`
+
 
 const Booklist =(props:any)=> {
     const books:bookRes = props.data.books
@@ -29,7 +21,6 @@ const Booklist =(props:any)=> {
    }
 
    else{
-       console.log(books)
     return (
        <div className="bookList">
            <ul className="bul">

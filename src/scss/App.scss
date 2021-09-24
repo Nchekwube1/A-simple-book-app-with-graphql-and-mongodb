@@ -8,7 +8,18 @@ html {
   font-size: 62.5%;
 }
 
-.newFont {
-  font-family: Fenix;
-  font-size: 3rem;
+.body {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  & .left {
+    position: relative;
+    width: 60%;
+    height: 89.6vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
 }

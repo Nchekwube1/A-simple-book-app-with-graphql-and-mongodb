@@ -1,5 +1,8 @@
 import {graphql} from "react-apollo"
-import{gql} from "apollo-boost"
+import {flowRight as compose} from "lodash"
+import { useState } from "react"
+import {getAuthors,addBook} from "./Queries/queries"
+import "./scss/Addbook.css"
 type eachAuthor ={
   name:string,
   id:string,
@@ -8,17 +11,29 @@ type eachAuthor ={
 type authorRes = eachAuthor[]
 
 
-const getAuthors = gql`
-{
-    authors{
-        name
-        id
-    }
-}
-`
+
 
 const Addbook = (props:any)=>{
-    if(props.data.loading === true){
+    console.log(props)
+const [name,setName] =useState("")
+const [genre,setGenre]= useState("")
+const [authorId, setAuthorid] = useState("")
+  const formSubmit = (e:any)=>{
+      e.preventDefault()
+      console.log(name,genre,authorId)
+      props.addBook({
+          variables:{
+            name,
+            genre,
+            authorId
+
+          }
+      })
+      setName("")
+      setAuthorid("")
+     setGenre("")
+  }
+    if(props.getAuthors.loading === true){
         return(
                       <option disabled>loading Authors...</option>
 
@@ -26,28 +41,35 @@ const Addbook = (props:any)=>{
     }
 
     else{
-        console.log(props)
+        const authorsArr:authorRes =props.getAuthors.authors
 return(
-     <form action="" className="addbook">
-  <div className="field">
-      <input type="text" placeholder="book name" />
-  </div>
+     <form action="" className="addbook" onSubmit={formSubmit}>
+      <input type="text"  className="field"  placeholder="book name" value={name} onChange={e=> setName(e.target.value)}/>
 
-  <div className="field">
-      <input type="text" placeholder="genre" />
-  </div>
+      <input type="text" className="field"  placeholder="genre" value={genre} onChange={e=> setGenre(e.target.value)} />
 
-  <div className="field">
-      <label className="authlabel">Author:</label>
-      <select>
-          <option>Select Author</option>
-          {/* {return ()} */}
+      <select className="select" onChange={
+          (e)=>{
+              setAuthorid(e.target.value)
+              console.log(authorId)
+            
+            }
+        //  
+         }>
+          <option className="select">Select Author</option>
+          {authorsArr.map((author:eachAuthor)=>{
+              return (
+                  <option className="select" key={author.id} value={author.id}>{author.name}</option>
+              )
+          })}
       </select>
-  </div>
-  <button  type="submit">Add</button>
+  <button  className="button" type="submit">Add book</button>
  </form>
 )
     }
 }
 
-export default graphql(getAuthors)(Addbook)
+export default compose(
+    graphql(getAuthors, {name:"getAuthors"}),
+    graphql(addBook,{name:"addBook"})
+)(Addbook)

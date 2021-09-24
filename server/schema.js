@@ -107,7 +107,7 @@ const Mutation = new GraphQLObjectType({
                     type: new GraphQLNonNull(GraphQLString)
                 },
                 authorId: {
-                    type: new GraphQLNonNull(GraphQLString)
+                    type: new GraphQLNonNull(GraphQLID)
                 },
             },
             resolve(parent, args) {
