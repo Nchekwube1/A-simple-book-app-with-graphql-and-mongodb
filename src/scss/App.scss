@@ -22,4 +22,13 @@ html {
     display: flex;
     flex-direction: column;
   }
+  & .right {
+    position: relative;
+    width: 40%;
+    height: 89.6vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #262c47;
+  }
 }

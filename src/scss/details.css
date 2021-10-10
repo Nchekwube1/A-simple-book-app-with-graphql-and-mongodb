@@ -1,4 +1,7 @@
-h1 {
-  font-size: 4rem;
+.click {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #4b4b4b;
+  font-family: Fenix;
 }
 /*# sourceMappingURL=details.css.map */

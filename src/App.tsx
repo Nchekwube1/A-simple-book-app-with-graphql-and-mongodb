@@ -5,13 +5,16 @@ import { ApolloProvider } from "react-apollo"
 import Addbook from "./Addbook"
 import Header from "./Header"
 import Details from "./Details"
+import Global from "./Global.jsx"
 const client = new ApolloClient({
   uri:"http://localhost:5000/graphql"
 })
 
 function App() {
+  
   return (
-  <ApolloProvider client={client}>
+   <Global>
+     <ApolloProvider client={client}>
     <Header/>
     <div className="body">
 
@@ -22,12 +25,13 @@ function App() {
 
       <div className="right">
 
-        <Details/>
+        <Details />
       </div>
   
     </div>
   
   </ApolloProvider>
+   </Global>
   );
 }
 

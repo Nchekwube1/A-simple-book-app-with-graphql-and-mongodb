@@ -27,6 +27,26 @@ const addBook= gql`
    }
 `
 
+const getBook = gql`
+query($id:ID){
+    book(id:$id){
+        id
+        name
+        genre
+        author{
+            id
+            name
+            age
+            books{
+                name
+                id
+            }
+        }
+    }
+}
+
+`
 
 
-export{getAuthors,getBooks,addBook}
+
+export{getAuthors,getBooks,addBook,getBook}
