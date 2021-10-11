@@ -69,8 +69,22 @@ const Details:FC = ( )=> {
                 <h1 className="loading">loading details... </h1>
             )
         }
+        console.log(gres.author?.books)
         return (
-            <h1>{gres?.name}</h1>
+
+            <div className="res">
+                <div className="name"><h1>{gres.name}</h1></div>
+                <div className="aname"><h1>{gres.author?.name}</h1></div>
+                <div className="genre"><h1>{gres.genre}</h1></div>
+              <div className="others">
+                  <h1>other books by this author: </h1>
+                   {gres.author?.books? gres.author?.books.map((book)=>{
+                      return (
+                          <li key={book.id} className="list">{book.name}</li>
+                      )
+                  }) :   <h1 className="err">oops author details not available</h1>}
+              </div>
+                </div>
         )
      
 

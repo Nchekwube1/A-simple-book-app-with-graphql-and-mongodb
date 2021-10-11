@@ -11,4 +11,69 @@
   color: black;
   font-family: Fenix;
 }
+
+.res {
+  position: relative;
+  width: 100%;
+  padding: 0rem 2rem;
+}
+
+.res .name {
+  position: relative;
+  width: 100%;
+  padding: 0.4rem 0rem;
+  text-transform: capitalize;
+  font-family: zen;
+}
+
+.res .name h1 {
+  font-size: 2.6rem;
+}
+
+.res .aname {
+  position: relative;
+  width: 100%;
+  padding: 0.4rem 0rem;
+  text-transform: capitalize;
+  font-family: fenix;
+}
+
+.res .aname h1 {
+  font-size: 2.7rem;
+}
+
+.res .genre {
+  position: relative;
+  width: 100%;
+  padding: 0.4rem 0rem;
+  text-transform: capitalize;
+  font-family: fenix;
+}
+
+.res .genre h1 {
+  font-size: 2.3rem;
+}
+
+.res .others {
+  position: relative;
+  width: 100%;
+  padding: 0.4rem 0rem;
+  text-transform: capitalize;
+  font-family: fenix;
+}
+
+.res .others h1 {
+  font-size: 2.1rem;
+  display: block;
+}
+
+.res .others .list,
+.res .others .err {
+  position: relative;
+  font-size: 1.9rem;
+  font-family: fenix;
+  padding-left: 2rem;
+  list-style-position: inside;
+  list-style-type: square;
+}
 /*# sourceMappingURL=details.css.map */

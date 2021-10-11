@@ -10,3 +10,62 @@
   color: rgb(0, 0, 0);
   font-family: Fenix;
 }
+
+.res {
+  position: relative;
+  width: 100%;
+  padding: 0rem 2rem;
+  & .name {
+    position: relative;
+    width: 100%;
+    padding: 0.4rem 0rem;
+
+    text-transform: capitalize;
+    font-family: zen;
+    & h1 {
+      font-size: 2.6rem;
+    }
+  }
+  & .aname {
+    position: relative;
+    width: 100%;
+    padding: 0.4rem 0rem;
+
+    text-transform: capitalize;
+    font-family: fenix;
+    & h1 {
+      font-size: 2.7rem;
+    }
+  }
+  & .genre {
+    position: relative;
+    width: 100%;
+    padding: 0.4rem 0rem;
+    text-transform: capitalize;
+    font-family: fenix;
+    & h1 {
+      font-size: 2.3rem;
+    }
+  }
+  & .others {
+    position: relative;
+    width: 100%;
+    padding: 0.4rem 0rem;
+    text-transform: capitalize;
+    font-family: fenix;
+    & h1 {
+      font-size: 2.1rem;
+      display: block;
+    }
+
+    & .list,
+    & .err {
+      position: relative;
+      font-size: 1.9rem;
+      font-family: fenix;
+      padding-left: 2rem;
+      list-style-position: inside;
+      list-style-type: square;
+    }
+  }
+}
