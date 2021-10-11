@@ -4,4 +4,11 @@
   color: #4b4b4b;
   font-family: Fenix;
 }
+
+.loading {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: black;
+  font-family: Fenix;
+}
 /*# sourceMappingURL=details.css.map */
